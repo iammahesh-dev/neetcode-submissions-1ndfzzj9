@@ -1,0 +1,9 @@
+func rob(nums []int) int {
+    rob1, rob2 := 0, 0
+	for _,v := range nums {
+		t := max(v+rob1, rob2)
+		rob1 = rob2
+		rob2 = t
+	}
+	return rob2
+}
